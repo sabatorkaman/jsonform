@@ -1,12 +1,24 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import {LayoutComponent} from './layout/layout.component';
+import {Element,Horizontal} from './model';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [
+    LayoutComponent
+  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'app';
+  layout: any = {
+    type: "vertical",
+    childs: [
+
+
+      ,
+      {type: 'element', elementType:'password', label: 'password'},
+      {type: 'element', elementType:'button', label: 'button'},
+    ]
+  }
 }
