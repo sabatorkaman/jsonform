@@ -1,15 +1,8 @@
+<ng-template
+  dynamic-layout
+  [layout]="$any(layout)"
+></ng-template>
 
-<div *ngIf="layout?.type === 'horizontal'" dynamic-layout>
-  <app-horizontal [horizontal]="layout"></app-horizontal>
-</div>
-
-<div *ngIf="layout?.type === 'vertical'" dynamic-layout>
-  <app-vertical [vertical]="layout"></app-vertical>
-</div>
-
-<div *ngIf="layout?.type === 'element'" dynamic-layout>
-  <app-element [element]="layout"></app-element>
-</div>
 
 
 

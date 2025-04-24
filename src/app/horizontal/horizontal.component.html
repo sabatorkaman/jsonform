@@ -1,0 +1,5 @@
+<div class="flex flex-row">
+  @for (item of layout?.childs; track $index) {
+    <app-layout class="flex flex-1" [layout]="item"></app-layout>
+  }
+</div>

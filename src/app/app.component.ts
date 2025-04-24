@@ -1,10 +1,12 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {LayoutComponent} from './layout/layout.component';
-import {Horizontal, Layout, Element, Vertical} from './model';
+import {Element, Horizontal, Layout, Vertical} from './model';
+import {ButtonModule} from 'primeng/button';
+
 @Component({
   selector: 'app-root',
   imports: [
-    LayoutComponent
+    LayoutComponent, ButtonModule
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
@@ -16,22 +18,21 @@ export class AppComponent {
       {
         type: 'vertical',
         childs: [
-          {type: 'element', elementType: 'password', label: 'password'} as Element ,
-          {type: 'element', elementType: 'text', label: 'saba'}  as Element  ,
-          {type: 'element', elementType: 'button', label: 'btn'}  as Element  ,
+          {type: 'element', elementType: 'password', label: 'password'} as Element,
+          {type: 'element', elementType: 'text', label: 'name'} as Element,
+          {type: 'element', elementType: 'button', label: 'btn'} as Element,
+
         ]
       } as Vertical,
-      {type: 'horizontal', childs: [
-          {
+      {
+        type: 'vertical',
+        childs: [
+          {type: 'element', elementType: 'email', label: 'email'} as Element,
+          {type: 'element', elementType: 'button', label: 'submit'} as Element,
 
-          }
-        ]} as Horizontal,
-      {type: 'element', elementType: 'text', label: 'saba'} as Element,
-      {type: 'element', elementType: 'button', label: 'btn'}  as Element,
+        ]
+      } as Horizontal,
 
-    ],
-  } as Horizontal
-
+    ]
+  } as Horizontal;
 }
-
-

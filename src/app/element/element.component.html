@@ -1,17 +1,30 @@
-@if(element !== undefined){
+@if (layout !== undefined) {
+  @switch (layout.elementType) {
+    @case ("password") {
 
-@switch (element.elementType){
-  @case ("password"){
-    <label>{{element.label}}</label>
-    <input type="password">
+      <div class="card flex justify-center gap-3 py-5 w-full ">
+        <label>{{ layout.label }}</label>
+        <input type="{{layout.elementType}}" pInputText/>
+      </div>
+    }
+    @case ("text") {
+      <div class="card flex justify-center gap-3 py-5 w-full">
+        <label>{{ layout.label }}</label>
+        <input type="{{layout.elementType}}" pInputText/>
+      </div>
+    }
+    @case ("email") {
+      <div class="card flex justify-center gap-3 py-5 w-full">
+        <label>{{ layout.label }}</label>
+        <input class="w-full" type="{{layout.elementType}}" pInputText/>
+      </div>
+    }
+    @case ("button") {
+      <div class="px-5 py-5 w-full">
+        <p-button label="{{ layout.label }}" severity="secondary"/>
+      </div>
+    }
   }
-  @case ("text"){
-    <label>{{element.label}}</label>
-    <input type="text"  >
-  }
-  @case ("button"){
-    <button>{{element.label}}</button>
-  }
-}
+
 }
 
