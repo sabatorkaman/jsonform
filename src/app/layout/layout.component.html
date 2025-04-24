@@ -1,18 +1,15 @@
-@if(layout?.type=== "horizontal"){
-  <div class="flex flex-row">
-    @for (child of $any(layout).childs; track $index) {
-    }
 
-  </div>
-}
-@else if(layout?.type=== "vertical"){
-  <div class="flex flex-col">
-  @for (child of $any(layout).childs; track $index) {
-    <app-layout [layout]="child"></app-layout>
-  }
-  </div>
-}
-@else if(layout?.type=== "element"){
-  <app-element [element]="$any(layout)" ></app-element>
+<div *ngIf="layout?.type === 'horizontal'" dynamic-layout>
+  <app-horizontal [horizontal]="layout"></app-horizontal>
+</div>
 
-}
+<div *ngIf="layout?.type === 'vertical'" dynamic-layout>
+  <app-vertical [vertical]="layout"></app-vertical>
+</div>
+
+<div *ngIf="layout?.type === 'element'" dynamic-layout>
+  <app-element [element]="layout"></app-element>
+</div>
+
+
+

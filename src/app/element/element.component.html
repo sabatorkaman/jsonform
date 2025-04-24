@@ -1,6 +1,6 @@
 @if(element !== undefined){
 
-@switch (element?.elementType){
+@switch (element.elementType){
   @case ("password"){
     <label>{{element.label}}</label>
     <input type="password">
@@ -13,3 +13,5 @@
     <button>{{element.label}}</button>
   }
 }
+}
+

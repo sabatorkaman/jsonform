@@ -8,6 +8,5 @@ import {Element} from '../model';
   styleUrl: './element.component.scss'
 })
 export class ElementComponent {
-  @Input({required:true}) element?: Element
-
+  @Input({required:true}) element?:Element
 }
